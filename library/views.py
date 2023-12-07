@@ -103,6 +103,11 @@ def viewbook_view(request):
     books=models.Book.objects.all()
     return render(request,'library/viewbook.html',{'books':books})
 
+@login_required(login_url='studentlogin')
+def viewbook_view(request):
+    books=models.Book.objects.all()
+    return render(request,'library/viewbook.html',{'books':books})
+
 
 
 
